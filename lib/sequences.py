@@ -1,16 +1,23 @@
 #!/usr/bin/env python3
 
 def print_fibonacci(length):
-    if length == 0:
-        print("[]")
-        return
+#     if length == 0:
+#         print([])
+#         return
+#     fibonacci_sequence = []
+#     x,y=0,1
+#     for _ in range(length):
+#         fibonacci_sequence.append(x)
+#         x, y = y ,x + y
 
-    fibonacci_sequence = []
-    a, b = 0, 1
-    for _ in range(length):
-        fibonacci_sequence.append(a)
-        a, b = b, a + b
+#     print(fibonacci_sequence)
 
-    print(fibonacci_sequence)
+# print(print_fibonacci(3))
 
-print(print_fibonacci(3))
+### Method two:
+    fibonacci_sequence = [0,1]
+
+    while len(fibonacci_sequence) < length:
+        next_number = fibonacci_sequence[-1] + fibonacci_sequence[-2]
+        fibonacci_sequence.append(next_number)
+    print(fibonacci_sequence[:length])
